@@ -1,0 +1,134 @@
+.dragndrop{ width: auto; min-height:50px; border: 1px dashed #999;}
+.dragover {background:rgba(0,0,0,0.1);}
+.dragndrop span{text-align: center; display: block; margin-top: 15px;}
+.dropzoneFileList{margin-top:15px;}
+.uploadedfileDetails{padding: 15px; border-top: 1px dashed #999999; text-align: left; overflow: hidden;width: auto;}
+.overlayEffect{width: 100%;
+    position: relative;
+    height: 83px;
+    background-color: rgba(255,255,255,0.6);
+    z-index: 10;
+    overflow: hidden;
+    margin-top: -82px;}
+.loader {
+    width: 32px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    margin-top: -57px;
+    background-color: #a7d05d;
+    text-align: center;
+    z-index: 11;
+}
+.hideOverlayEffect{
+    display:none;
+}
+.fileProgressBar[value] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  
+  margin: 8px 0px;
+  width: 100%;
+  height: 15px;
+
+  /* For IE10 */
+  color: #00AB00;
+}
+.fileProgressBar[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.fileProgressBar[value]::-moz-progress-bar { 
+  background-image:
+    -moz-linear-gradient(135deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66% ),
+    -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -moz-linear-gradient(left, #00AB00, #00AB00);
+
+  border-radius: 2px; 
+  background-size: 35px 20px, 100% 100%, 100% 100%; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+.fileProgressBar[value]::-webkit-progress-value {
+  background-image:
+       -webkit-linear-gradient(-45deg, 
+                               transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                               rgba(0,0, 0, .1) 66%, transparent 66%),
+       -webkit-linear-gradient(top, 
+                               rgba(255, 255, 255, .25), 
+                               rgba(0, 0, 0, .25)),
+       -webkit-linear-gradient(left, #00AB00, #00AB00);
+    
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+
+}
+
+@-webkit-keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+@-webkit-keyframes move {
+0% {background-position: 0px 0px, 0 0, 0 0}
+100% {background-position: -100px 0px, 0 0, 0 0}
+}
+
+progress[value]::-webkit-progress-value::before {
+  content: '80%';
+  position: absolute;
+  right: 0;
+  top: -125%;
+}
+
+progress[value]::-webkit-progress-value::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 100%;
+  right: 7px;
+  top: 7px;
+  background-color: white;
+}
+
+.FilePreview{float: left; width: 50px; height: 50px;}
+.FilePreview img{width: 100%; height: 50px; object-fit:cover;}
+.fileDetail{float: right; width: 90%;font-family: sans-serif;font-size: 14px;}
+.message, .exception {display: inline-block;margin: 0px;    margin-left: 15px;}
+.message > span{background: green;width: 60px;text-align: center;padding: 2px;color: #fff;border-radius: 2px;font-size: 13px;margin: 0px;}
+.exception > span{background: red;width: 60px;text-align: center;padding: 2px;color: #fff;border-radius: 2px;font-size: 13px;margin: 0px;}
+.cancelUpload{float: right;color: #fff;border: none;background: red;padding: 3px;border-radius: 2px;cursor: pointer;}
+
+
+
+@media only screen and (max-width : 1047px) {
+  	.fileDetail{width: 90%;}
+}
+
+@media only screen and (max-width : 700px) {
+  	.fileDetail{width: 86%;}
+}
+
+@media only screen and (max-width : 500px) {
+  	.fileDetail{width: 82%;}
+}
+
+/*@media only screen and (min-width : 764px) and (max-width : 881px){
+	.fileDetail{width: 93%;}
+}
+
+@media only screen and (min-width : 673px) and (max-width : 763px){
+	.fileDetail{width: 92%;}
+}
+
+@media only screen and (min-width : 604px) and (max-width : 673px){
+	.fileDetail{width: 91%;}
+}*/
